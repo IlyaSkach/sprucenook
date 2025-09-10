@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sprucenook - Отделка парных саун</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+	<link rel="manifest" href="assets/site.webmanifest">
+	<meta name="theme-color" content="#7b522d">
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+	<!-- Header Section -->
+	<header class="header">
+		<!-- Video Background -->
+		<div class="video-background">
+			<video autoplay muted loop playsinline>
+				<source src="assets/sauna-video.MP4" type="video/mp4">
+				<!-- Fallback image if video doesn't load -->
+				<div class="video-fallback"></div>
+			</video>
+			<div class="video-overlay"></div>
+		</div>
+
+		<!-- Navigation -->
+		<nav class="navbar">
+			<div class="container">
+				<!-- Logo -->
+				<div class="logo">
+					<img src="assets/logo.png" alt="Sprucenook" class="logo-img">
+				</div>
+
+				<!-- Desktop Menu -->
+				<ul class="nav-menu desktop-menu">
+					<li><a href="#advantages" class="nav-link">Преимущества</a></li>
+					<li><a href="#gallery" class="nav-link">Галерея</a></li>
+					<li><a href="#delivery" class="nav-link">Доставка</a></li>
+					<li><a href="#contacts" class="nav-link">Контакты</a></li>
+				</ul>
+
+				<!-- Contact Icons -->
+				<div class="contact-icons">
+					<a href="https://t.me/sprucenook" class="contact-icon" target="_blank">
+						<div class="tree-slice"></div>
+						<i class="fab fa-telegram"></i>
+					</a>
+					<a href="https://wa.me/79001234567" class="contact-icon" target="_blank">
+						<div class="tree-slice"></div>
+						<i class="fab fa-whatsapp"></i>
+					</a>
+					<a href="mailto:info@sprucenook.ru" class="contact-icon">
+						<div class="tree-slice"></div>
+						<i class="fas fa-envelope"></i>
+					</a>
+					<a href="tel:+79001234567" class="contact-icon">
+						<div class="tree-slice"></div>
+						<i class="fas fa-phone"></i>
+					</a>
+				</div>
+
+				<!-- Mobile Menu Button -->
+				<div class="mobile-menu-btn">
+					<span class="hamburger"></span>
+					<span class="hamburger"></span>
+					<span class="hamburger"></span>
+				</div>
+			</div>
+
+			<!-- Mobile Menu -->
+			<div class="mobile-menu">
+				<!-- Close Button -->
+				<div class="mobile-menu-close">
+					<button class="close-btn" aria-label="Закрыть меню">
+						<i class="fas fa-times"></i>
+					</button>
+				</div>
+
+				<ul class="mobile-nav-menu">
+					<li><a href="#advantages" class="mobile-nav-link">Преимущества</a></li>
+					<li><a href="#gallery" class="mobile-nav-link">Галерея</a></li>
+					<li><a href="#delivery" class="mobile-nav-link">Доставка</a></li>
+					<li><a href="#contacts" class="mobile-nav-link">Контакты</a></li>
+				</ul>
+				<div class="mobile-contact-icons">
+					<a href="https://t.me/sprucenook" class="mobile-contact-icon" target="_blank">
+						<div class="tree-slice"></div>
+						<i class="fab fa-telegram"></i>
+					</a>
+					<a href="https://wa.me/79001234567" class="mobile-contact-icon" target="_blank">
+						<div class="tree-slice"></div>
+						<i class="fab fa-whatsapp"></i>
+					</a>
+					<a href="mailto:info@sprucenook.ru" class="mobile-contact-icon">
+						<div class="tree-slice"></div>
+						<i class="fas fa-envelope"></i>
+					</a>
+					<a href="tel:+79001234567" class="mobile-contact-icon">
+						<div class="tree-slice"></div>
+						<i class="fas fa-phone"></i>
+					</a>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Hero Content -->
+		<div class="hero-content">
+			<div class="container">
+				<div class="hero-text">
+					<h1 class="hero-title">
+						<span class="title-main">Отделка парных саун</span>
+						<span class="title-sub">премиум качества</span>
+					</h1>
+					<p class="hero-description">
+						Создаем уникальные сауны с использованием натуральных материалов.
+						Качественная отделка, современные технологии и индивидуальный подход.
+					</p>
+					<a href="https://wa.me/79001234567" class="whatsapp-btn" target="_blank">
+						<i class="fab fa-whatsapp"></i>
+						<span>Связаться с нами</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Main Content -->
+	<main>
+		<!-- Advantages Section -->
+		<section id="advantages" class="advantages-section">
+			<div class="advantages-header">
+				<h2 class="advantages-title">Наши преимущества</h2>
+			</div>
+			<div class="advantages-container">
+				<div class="advantages-slider">
+					<div class="advantage-box1 advantage-box">
+						<div class="advantage-bg"></div>
+						<div class="advantage-details">
+							<h1><img src="assets/logo.png" alt="Logo" class="advantage-logo">Натуральные материалы</h1>
+							<p>
+								Используем только экологически чистые породы дерева:
+								кедр, липа, осина. Каждый материал тщательно отобран
+								для создания здоровой атмосферы в вашей сауне.
+							</p>
+							<button>Узнать больше</button>
+						</div>
+						<div class="advantage-illustration">
+							<img src="assets/advantage_1.jpg" alt="Натуральные материалы" class="advantage-image">
+						</div>
+					</div>
+
+					<div class="advantage-box2 advantage-box">
+						<div class="advantage-bg"></div>
+						<div class="advantage-details">
+							<h1><img src="assets/logo.png" alt="Logo" class="advantage-logo">Современные технологии</h1>
+							<p>
+								Применяем передовые методы обработки древесины
+								и современное оборудование для создания долговечной
+								и красивой отделки сауны.
+							</p>
+							<button>Узнать больше</button>
+						</div>
+						<div class="advantage-illustration">
+							<img src="assets/advantage_2.jpg" alt="Современные технологии" class="advantage-image">
+						</div>
+					</div>
+
+					<div class="advantage-box3 advantage-box">
+						<div class="advantage-bg"></div>
+						<div class="advantage-details">
+							<h1><img src="assets/logo.png" alt="Logo" class="advantage-logo">Индивидуальный подход</h1>
+							<p>
+								Каждый проект уникален. Мы учитываем ваши пожелания,
+								размеры помещения и создаем сауну, которая идеально
+								подходит именно вам.
+							</p>
+							<button>Узнать больше</button>
+						</div>
+						<div class="advantage-illustration">
+							<img src="assets/advantage_3.jpg" alt="Индивидуальный подход" class="advantage-image">
+						</div>
+					</div>
+
+					<div class="advantage-box4 advantage-box hidden-advantage">
+						<div class="advantage-bg"></div>
+						<div class="advantage-details">
+							<h1><img src="assets/logo.png" alt="Logo" class="advantage-logo">Гарантия качества</h1>
+							<p>
+								Предоставляем гарантию на все виды работ и материалы.
+								Наши мастера имеют многолетний опыт в отделке саун
+								и бань премиум-класса.
+							</p>
+							<button>Узнать больше</button>
+						</div>
+						<div class="advantage-illustration">
+							<img src="assets/advantage_1.jpg" alt="Гарантия качества" class="advantage-image">
+						</div>
+					</div>
+
+					<div class="advantage-box5 advantage-box hidden-advantage">
+						<div class="advantage-bg"></div>
+						<div class="advantage-details">
+							<h1><img src="assets/logo.png" alt="Logo" class="advantage-logo">Быстрые сроки</h1>
+							<p>
+								Выполняем работы в согласованные сроки без потери
+								качества. От проекта до готовой сауны - быстро,
+								качественно и в срок.
+							</p>
+							<button>Узнать больше</button>
+						</div>
+						<div class="advantage-illustration">
+							<img src="assets/advantage_2.jpg" alt="Быстрые сроки" class="advantage-image">
+						</div>
+					</div>
+				</div>
+
+				<svg xmlns="http://www.w3.org/2000/svg" class="advantage-prev" width="56.898" height="91"
+					viewBox="0 0 56.898 91">
+					<path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(0 91) rotate(-90)" fill="#8b4513" />
+				</svg>
+				<svg xmlns="http://www.w3.org/2000/svg" class="advantage-next" width="56.898" height="91"
+					viewBox="0 0 56.898 91">
+					<path d="M45.5,0,91,56.9,48.452,24.068,0,56.9Z" transform="translate(56.898) rotate(90)" fill="#8b4513" />
+				</svg>
+
+				<div class="advantage-trail">
+					<div class="advantage-box1 active">1</div>
+					<div class="advantage-box2">2</div>
+					<div class="advantage-box3">3</div>
+					<div class="advantage-box4 hidden-dot">4</div>
+					<div class="advantage-box5 hidden-dot">5</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Кнопка "Смотреть все преимущества" -->
+		<div class="advantages-more-wrapper">
+			<button class="advantages-more-btn" id="advantages-more-btn">
+				<i class="fas fa-plus"></i>
+				<span>Смотреть все преимущества</span>
+			</button>
+		</div>
+
+		<!-- Gallery Section -->
+		<section id="gallery" class="gallery-section">
+			<div class="gallery-header">
+				<h2 class="gallery-title">Галерея наших работ</h2>
+			</div>
+			<div class="gallery-container">
+				<div class="gallery-slide" style="background-image: url('assets/slider_1.jpg');">
+					<h3>Современная сауна</h3>
+				</div>
+				<div class="gallery-slide" style="background-image: url('assets/slider_2.jpg');">
+					<h3>Классическая парная</h3>
+				</div>
+				<div class="gallery-slide" style="background-image: url('assets/slider_3.jpg');">
+					<h3>Премиум отделка</h3>
+				</div>
+				<div class="gallery-slide" style="background-image: url('assets/slider_4.jpg');">
+					<h3>Эксклюзивный дизайн</h3>
+				</div>
+				<div class="gallery-slide active" style="background-image: url('assets/slider_5.jpg');">
+					<h3>Роскошная сауна</h3>
+				</div>
+			</div>
+
+			<!-- Кнопка "Смотреть больше" -->
+			<div class="gallery-more-container">
+				<button class="gallery-more-btn" id="gallery-more-btn">
+					<i class="fas fa-plus"></i>
+					<span>Смотреть больше</span>
+				</button>
+			</div>
+
+			<!-- Расширенная галерея (скрыта по умолчанию) -->
+			<div class="gallery-expanded" id="gallery-expanded" style="display: none;">
+				<div class="gallery-expanded-container">
+					<!-- Дополнительные слайды будут добавлены через JavaScript -->
+				</div>
+				<div class="gallery-expanded-controls">
+					<button class="gallery-prev-btn" id="gallery-prev-btn">
+						<i class="fas fa-chevron-left"></i>
+					</button>
+					<div class="gallery-counter">
+						<span id="gallery-current">1</span> / <span id="gallery-total">23</span>
+					</div>
+					<button class="gallery-next-btn" id="gallery-next-btn">
+						<i class="fas fa-chevron-right"></i>
+					</button>
+				</div>
+				<button class="gallery-close-btn" id="gallery-close-btn">
+					<i class="fas fa-times"></i>
+					<span>Закрыть</span>
+				</button>
+			</div>
+		</section>
+
+		<section id="delivery" class="delivery-section">
+			<div class="container">
+				<div class="delivery-content">
+					<div class="delivery-image">
+						<img src="assets/delivery.png" alt="Доставка по всему миру" class="delivery-img">
+					</div>
+					<div class="delivery-text">
+						<h2 class="delivery-title">Доставка по всему миру</h2>
+						<p class="delivery-description">
+							Осуществляем доставку наших саун в любую точку мира.
+							Профессиональная упаковка и надежная транспортировка
+							гарантируют сохранность вашего заказа.
+						</p>
+						<button class="delivery-btn">Узнать условия доставки</button>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="contacts" class="contacts-section">
+			<div class="contacts-bg">
+				<img src="assets/smoke.png" alt="Дым" class="smoke-animation">
+			</div>
+			<div class="container">
+				<div class="contacts-content">
+					<h2 class="contacts-title">Свяжитесь с нами удобным способом</h2>
+					<p class="contacts-description">
+						Мы отправим вам все каталоги продукции и подберем оптимальный для вас вариант
+					</p>
+					<div class="contacts-icons">
+						<a href="https://t.me/your_telegram" class="contact-icon-large" aria-label="Telegram">
+							<div class="tree-slice-large"></div>
+							<i class="fab fa-telegram"></i>
+						</a>
+						<a href="https://wa.me/your_whatsapp" class="contact-icon-large" aria-label="WhatsApp">
+							<div class="tree-slice-large"></div>
+							<i class="fab fa-whatsapp"></i>
+						</a>
+						<a href="mailto:your@email.com" class="contact-icon-large" aria-label="Email">
+							<div class="tree-slice-large"></div>
+							<i class="fas fa-envelope"></i>
+						</a>
+						<a href="tel:+your_phone" class="contact-icon-large" aria-label="Phone">
+							<div class="tree-slice-large"></div>
+							<i class="fas fa-phone"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Floating Social Icons -->
+	<div id="floating-social" class="floating-social">
+		<a href="https://t.me/your_telegram" class="floating-contact-icon" aria-label="Telegram">
+			<div class="tree-slice"></div>
+			<i class="fab fa-telegram"></i>
+		</a>
+		<a href="https://wa.me/your_whatsapp" class="floating-contact-icon" aria-label="WhatsApp">
+			<div class="tree-slice"></div>
+			<i class="fab fa-whatsapp"></i>
+		</a>
+		<a href="mailto:your@email.com" class="floating-contact-icon" aria-label="Email">
+			<div class="tree-slice"></div>
+			<i class="fas fa-envelope"></i>
+		</a>
+		<a href="tel:+your_phone" class="floating-contact-icon" aria-label="Phone">
+			<div class="tree-slice"></div>
+			<i class="fas fa-phone"></i>
+		</a>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
