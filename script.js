@@ -338,16 +338,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
       advantagesSlider.addEventListener("touchstart", (e) => {
         start = e.touches[0].clientX;
+        this.touchStartY = e.touches[0].clientY;
         sliderWidth = advantagesSlider.clientWidth / trailItems.length;
       });
 
       advantagesSlider.addEventListener("touchmove", (e) => {
-        e.preventDefault();
-        move = e.touches[0].clientX;
+        // Убираем preventDefault() чтобы разрешить вертикальный скролл
+        // Проверяем, является ли движение больше горизонтальным, чем вертикальным
+        const touchX = e.touches[0].clientX;
+        const touchY = e.touches[0].clientY;
+
+        if (!this.touchStartY) {
+          this.touchStartY = touchY;
+        }
+
+        const xDiff = Math.abs(touchX - start);
+        const yDiff = Math.abs(touchY - this.touchStartY);
+
+        // Если движение больше горизонтальное, чем вертикальное, предотвращаем скролл страницы
+        if (xDiff > yDiff) {
+          e.preventDefault();
+        }
+
+        move = touchX;
         change = start - move;
       });
 
       const mobile = (e) => {
+        // Сбрасываем touchStartY
+        this.touchStartY = null;
+
         if (change > sliderWidth / 4) {
           // Проверяем, скрыты ли 4 и 5 преимущества
           const box4Hidden = document
@@ -647,6 +667,8 @@ function showExpandedGallery() {
   createExpandedSlides();
   galleryExpanded.style.display = "flex";
   document.body.style.overflow = "hidden";
+  // Добавляем класс для touch-action
+  galleryExpandedContainer.style.touchAction = "pan-y";
   currentExpandedSlide = 0;
   updateExpandedGallery();
 }
@@ -655,6 +677,8 @@ function showExpandedGallery() {
 function hideExpandedGallery() {
   galleryExpanded.style.display = "none";
   document.body.style.overflow = "auto";
+  // Удаляем класс touch-action
+  galleryExpandedContainer.style.touchAction = "";
 }
 
 // Update expanded gallery display
