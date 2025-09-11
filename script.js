@@ -1,5 +1,42 @@
 // Mobile Menu Toggle
 document.addEventListener("DOMContentLoaded", function () {
+  // Ensure header background video autoplays on iOS without controls
+  const headerVideo = document.querySelector(".video-background video");
+  if (headerVideo) {
+    // Explicit attributes (in case of cached HTML)
+    headerVideo.setAttribute("playsinline", "");
+    headerVideo.setAttribute("webkit-playsinline", "");
+    headerVideo.muted = true;
+    headerVideo.autoplay = true;
+    headerVideo.loop = true;
+
+    const tryPlay = () => {
+      headerVideo.play().catch(() => {
+        // Retry after a short delay – iOS sometimes blocks until gesture; keep silent retries
+        setTimeout(() => headerVideo.play().catch(() => {}), 500);
+      });
+    };
+
+    // Try immediately and on visibility changes
+    tryPlay();
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) tryPlay();
+    });
+
+    // Resume on user interactions (first gesture unlocks autoplay policy)
+    const resume = () => {
+      tryPlay();
+      removeListeners();
+    };
+    const removeListeners = () => {
+      ["touchstart", "click", "scroll"].forEach((evt) =>
+        window.removeEventListener(evt, resume, { passive: true })
+      );
+    };
+    ["touchstart", "click", "scroll"].forEach((evt) =>
+      window.addEventListener(evt, resume, { passive: true })
+    );
+  }
   const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
   const mobileMenu = document.querySelector(".mobile-menu");
   const mobileNavLinks = document.querySelectorAll(".mobile-nav-link");
@@ -169,13 +206,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Parallax effect for hero content (subtle)
-  window.addEventListener("scroll", function () {
-    const scrolled = window.pageYOffset;
-    const heroContent = document.querySelector(".hero-content");
-    if (heroContent && scrolled < window.innerHeight) {
-      heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-    }
-  });
+  // window.addEventListener("scroll", function () {
+  //   const scrolled = window.pageYOffset;
+  //   const heroContent = document.querySelector(".hero-content");
+  //   if (heroContent && scrolled < window.innerHeight) {
+  //     heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+  //   }
+  // });
 
   // Intersection Observer for animations
   const observerOptions = {
@@ -613,31 +650,65 @@ const galleryCloseBtn = document.getElementById("gallery-close-btn");
 const galleryCurrent = document.getElementById("gallery-current");
 const galleryTotal = document.getElementById("gallery-total");
 
-// Gallery data with 23 slides
+// Gallery data with 57 slides
 const galleryData = [
-  { image: "assets/slider_1.jpg", title: "Современная сауна" },
-  { image: "assets/slider_2.jpg", title: "Классическая парная" },
-  { image: "assets/slider_3.jpg", title: "Премиум отделка" },
-  { image: "assets/slider_4.jpg", title: "Эксклюзивный дизайн" },
+  { image: "assets/slider_1.jpg", title: "Неповторимая атмосфера" },
+  { image: "assets/slider_2.jpg", title: "Индивидуальный подход" },
+  { image: "assets/slider_3.jpg", title: "Атмосфера теплоты и уюта" },
+  { image: "assets/slider_4.jpg", title: "Естественная красота" },
   { image: "assets/slider_5.jpg", title: "Роскошная сауна" },
   { image: "assets/slider_6.jpg", title: "Деревянная отделка" },
   { image: "assets/slider_7.jpg", title: "Стеклянные элементы" },
-  { image: "assets/slider_8.jpg", title: "Современное освещение" },
+  // { image: "assets/slider_8.jpg", title: "Современное освещение" },
   { image: "assets/slider_9.jpg", title: "Экологичные материалы" },
   { image: "assets/slider_10.jpg", title: "Индивидуальный проект" },
   { image: "assets/slider_11.jpg", title: "Традиционная баня" },
   { image: "assets/slider_12.jpg", title: "Финская сауна" },
   { image: "assets/slider_13.jpg", title: "Инфракрасная сауна" },
-  { image: "assets/slider_14.jpg", title: "Комбинированная сауна" },
-  { image: "assets/slider_15.jpg", title: "Сауна с бассейном" },
-  { image: "assets/slider_16.jpg", title: "Минималистичный дизайн" },
-  { image: "assets/slider_17.jpg", title: "Скандинавский стиль" },
+  // { image: "assets/slider_14.jpg", title: "Комбинированная сауна" },
+  // { image: "assets/slider_15.jpg", title: "Сауна с бассейном" },
+  // { image: "assets/slider_16.jpg", title: "Минималистичный дизайн" },
+  // { image: "assets/slider_17.jpg", title: "Скандинавский стиль" },
   { image: "assets/slider_18.jpg", title: "Русская баня" },
   { image: "assets/slider_19.jpg", title: "Турецкий хамам" },
-  { image: "assets/slider_20.jpg", title: "Японская офуро" },
-  { image: "assets/slider_21.jpg", title: "Семейная сауна" },
+  // { image: "assets/slider_20.jpg", title: "Японская офуро" },
+  // { image: "assets/slider_21.jpg", title: "Семейная сауна" },
   { image: "assets/slider_22.jpg", title: "Корпоративная сауна" },
   { image: "assets/slider_23.jpg", title: "Эксклюзивный проект" },
+  { image: "assets/slider_24.jpg", title: "Премиум отделка" },
+  { image: "assets/slider_25.jpg", title: "Современный дизайн" },
+  { image: "assets/slider_26.jpg", title: "Классическая элегантность" },
+  { image: "assets/slider_27.jpg", title: "Природные материалы" },
+  // { image: "assets/slider_28.jpg", title: "Архитектурное решение" },
+  // { image: "assets/slider_29.jpg", title: "Функциональность и красота" },
+  // { image: "assets/slider_30.jpg", title: "Уникальный стиль" },
+  // { image: "assets/slider_31.jpg", title: "Комфорт и уют" },
+  // { image: "assets/slider_32.jpg", title: "Эксклюзивное решение" },
+  // { image: "assets/slider_33.jpg", title: "Современные технологии" },
+  // { image: "assets/slider_34.jpg", title: "Традиции и инновации" },
+  // { image: "assets/slider_35.jpg", title: "Идеальная атмосфера" },
+  // { image: "assets/slider_36.jpg", title: "Мастерство исполнения" },
+  { image: "assets/slider_37.jpg", title: "Современные решения" },
+  { image: "assets/slider_38.jpg", title: "Традиционные технологии" },
+  { image: "assets/slider_39.jpg", title: "Эксклюзивный дизайн" },
+  { image: "assets/slider_40.jpg", title: "Премиум качество" },
+  { image: "assets/slider_41.jpg", title: "Индивидуальный подход" },
+  { image: "assets/slider_42.jpg", title: "Профессиональная работа" },
+  { image: "assets/slider_43.jpg", title: "Уникальные проекты" },
+  { image: "assets/slider_44.jpg", title: "Современные материалы" },
+  { image: "assets/slider_45.jpg", title: "Экологичные решения" },
+  { image: "assets/slider_46.jpg", title: "Инновационные технологии" },
+  { image: "assets/slider_47.jpg", title: "Классическая элегантность" },
+  { image: "assets/slider_48.jpg", title: "Современный комфорт" },
+  { image: "assets/slider_49.jpg", title: "Традиционное мастерство" },
+  { image: "assets/slider_50.jpg", title: "Индивидуальные решения" },
+  { image: "assets/slider_51.jpg", title: "Премиум отделка" },
+  { image: "assets/slider_52.jpg", title: "Эксклюзивные проекты" },
+  { image: "assets/slider_53.jpg", title: "Современный дизайн" },
+  { image: "assets/slider_54.jpg", title: "Традиционные ценности" },
+  { image: "assets/slider_55.jpg", title: "Инновационные решения" },
+  { image: "assets/slider_56.jpg", title: "Профессиональное качество" },
+  { image: "assets/slider_57.jpg", title: "Идеальное исполнение" },
 ];
 
 let currentExpandedSlide = 0;
@@ -757,3 +828,26 @@ if (galleryExpanded) {
     }
   });
 }
+
+// Обработчики для кнопок "Узнать подробнее"
+document.addEventListener("DOMContentLoaded", function () {
+  const learnMoreButtons = document.querySelectorAll(
+    ".advantage-details button"
+  );
+
+  learnMoreButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      // Открываем WhatsApp с номером +79611465603
+      window.open("https://wa.me/79611465603", "_blank");
+    });
+  });
+
+  // Обработчик для кнопки "Узнать условия доставки"
+  const deliveryButton = document.querySelector(".delivery-btn");
+  if (deliveryButton) {
+    deliveryButton.addEventListener("click", function () {
+      // Открываем WhatsApp с номером +79611465603
+      window.open("https://wa.me/79611465603", "_blank");
+    });
+  }
+});
